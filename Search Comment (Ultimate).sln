@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Search Comment (Ultimate)", "Search Comment (Ultimate)\Search Comment (Ultimate).csproj", "{B8D8ADBD-32C7-4FCF-B696-70342977FB3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8D8ADBD-32C7-4FCF-B696-70342977FB3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D8ADBD-32C7-4FCF-B696-70342977FB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D8ADBD-32C7-4FCF-B696-70342977FB3E}.Debug|x64.ActiveCfg = Debug|x64
+		{B8D8ADBD-32C7-4FCF-B696-70342977FB3E}.Debug|x64.Build.0 = Debug|x64
+		{B8D8ADBD-32C7-4FCF-B696-70342977FB3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D8ADBD-32C7-4FCF-B696-70342977FB3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D8ADBD-32C7-4FCF-B696-70342977FB3E}.Release|x64.ActiveCfg = Release|x64
+		{B8D8ADBD-32C7-4FCF-B696-70342977FB3E}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CD48DC6-84BD-45E8-9954-B8987661D867}
+	EndGlobalSection
+EndGlobal
