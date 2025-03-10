@@ -3,9 +3,6 @@
 
 A Dalamud plugin for Final Fantasy XIV that removes search comment character limits.
 
-## Description
-Search Comment (Ultimate) is a Dalamud plugin that removes the character limit restriction for search comments in FFXIV, allowing for longer and more detailed descriptions.
-
 ## Installation
 Add the following URL to your third-party repository list:
 ```
@@ -23,9 +20,6 @@ Use the command `/scu` to open the plugin configuration interface.
 ### Configuration Options
 - **Enable/Disable**: Toggle the plugin functionality on or off
 - **Additional settings can be configured through the UI**
-
-## Disclaimer
-This plugin is not affiliated with or endorsed by Square Enix. Use of this plugin may violate the FFXIV Terms of Service.
 
 ## Support
 If you encounter any issues or have suggestions for improvements, please open an issue on the GitHub repository.
