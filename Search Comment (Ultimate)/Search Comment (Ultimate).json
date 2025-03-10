@@ -1,13 +1,13 @@
 {
   "Author": "Mentor Btw",
   "Name": "Search Comment (Ultimate)",
-  "Punchline": "Unlock your full Search Comment power.",
-  "Description": "Unlocks the search comment from 60 to 192 characters.",
+  "Punchline": "Unlocks your search comment power from 60 to 192 characters.",
+  "Description": "Unlocks your search comment power from 60 to 192 characters.",
   "InternalName": "Search Comment (Ultimate)",
   "ApplicableVersion": "any",
   "DalamudApiLevel": 11,
   "RepoUrl": "https://github.com/Paparogue",
-  "IconUrl": "",
+  "IconUrl": "https://raw.github.com/Paparogue/SearchCommentUltimate/ef0a47920387ed29b2a599572156bbe9cfab4ea9/CommentSearch.png",
   "ImageUrls": [ "" ],
   "Tags": [
     "UI",
