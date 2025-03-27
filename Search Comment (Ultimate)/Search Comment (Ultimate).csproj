@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+	<VersionPrefix>1.0.1</VersionPrefix>
     <TargetFramework>net9.0-windows</TargetFramework>
     <RootNamespace>Search_Comment__Ultimate_</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
