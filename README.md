@@ -21,5 +21,5 @@ Use the command `/scu` to open the plugin configuration interface.
 - **Enable/Disable**: Toggle the plugin functionality on or off
 - **Additional settings can be configured through the UI**
 
-## Support
-If you encounter any issues or have suggestions for improvements, please open an issue on the GitHub repository.
+## Known Issues
+The report menu tickets may display formatting errors due to a plugin conflict. To resolve this issue, you can temporarily disable the plugin until you either compose new text or create an in-game ticket.
