@@ -6,7 +6,7 @@ A Dalamud plugin for Final Fantasy XIV that removes search comment character lim
 ## Installation
 Add the following URL to your third-party repository list:
 ```
-https://raw.githubusercontent.com/YourUsername/YourRepo/refs/heads/main/repo.json
+https://raw.githubusercontent.com/Paparogue/PaparogueRepo/refs/heads/main/repo.json
 ```
 
 ## Features
