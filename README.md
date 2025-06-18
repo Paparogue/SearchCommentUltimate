@@ -3,7 +3,7 @@
 
 A Dalamud plugin for Final Fantasy XIV that removes search comment character limits, perfect to enhance your Adventure Plate.
 
-![AventurePlate Icon](https://raw.githubusercontent.com/Paparogue/SearchCommentUltimate/bdee2c374ddff935b37a8cc1e4633f3d016d641b/grafik.png)
+![AventurePlate Icon](https://raw.github.com/Paparogue/SearchCommentUltimate/1f2702def857f203ba18bd8b75c1b8c4382ae428/example.png)
 
 ## Installation
 Add the following URL to your third-party repository list:
