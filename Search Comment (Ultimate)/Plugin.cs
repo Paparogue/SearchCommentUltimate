@@ -30,9 +30,9 @@ namespace SearchCommentUltimate
         public SearchCommentUI SCUI;
         private bool _isPatchApplied = false;
 
-        #pragma warning disable CS8618
+#pragma warning disable CS8618
         public Plugin(IDalamudPluginInterface pluginInterface, ICommandManager commandManager)
-        #pragma warning restore CS8618
+#pragma warning restore CS8618
         {
             PluginInterface = pluginInterface;
             CommandManager = commandManager;
@@ -53,11 +53,14 @@ namespace SearchCommentUltimate
         {
             try
             {
-                string signature = "44 8B 81 84 0C 00 00 4C 8D A1 ?? ?? ?? ?? 4C 89 7C 24 30 48 8D 81 ?? ?? ?? ?? 4C 89 64 24 28";
-                _originalInstructionAddress = SigScanner.ScanText(signature);
+                string signature = "44 8B 89 ?? 0C 00 00 4C 8D A1 ?? ?? 00 00 44 8B 81 ?? 0C 00 00 4C 8D A9 ?? ?? 00 00 4C 89 64 24 30";
 
-                if (_originalInstructionAddress != IntPtr.Zero)
+                IntPtr scanResult = SigScanner.ScanText(signature);
+
+                if (scanResult != IntPtr.Zero)
                 {
+                    _originalInstructionAddress = scanResult + 14;
+
                     byte[] patchBytes = new byte[] { 0x41, 0xB8, 0xC0, 0x00, 0x00, 0x00, 0x90 };
 
                     _originalBytes = new byte[patchBytes.Length];
@@ -68,6 +71,10 @@ namespace SearchCommentUltimate
                     Log.Information($"Successfully patched instruction at 0x{_originalInstructionAddress.ToInt64():X}");
 
                     _isPatchApplied = true;
+                }
+                else
+                {
+                    Log.Warning("Failed to find signature for Search Comment patch");
                 }
             }
             catch (Exception ex)
@@ -87,8 +94,9 @@ namespace SearchCommentUltimate
         }
 
         private void OnDraw()
-        {;
-            if(ClientState is not null && ClientState.LocalPlayer is not null) {
+        {
+            if (ClientState is not null && ClientState.LocalPlayer is not null)
+            {
                 SCUI.Draw();
                 if (_isPatchApplied && !PluginConfig.Active)
                     RestoreOriginal();

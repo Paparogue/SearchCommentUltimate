@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
-using ImGuiNET;
+using Dalamud.Bindings.ImGui;
 using Tabnado.UI;
 
 namespace SearchCommentUltimate
@@ -33,7 +33,7 @@ namespace SearchCommentUltimate
                 return;
 
             ImGui.SetNextWindowSize(new Vector2(450, 450), ImGuiCond.FirstUseEver);
-            if (ImGui.Begin("Tabnado Target Settings", ref settingsVisible, ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("Search Comment (Ultimate) Settings", ref settingsVisible, ImGuiWindowFlags.AlwaysAutoResize))
             {
                 bool configChanged = false;
                 bool active = config.Active;
