@@ -13,16 +13,11 @@ namespace SearchCommentUltimate
     {
         public string Name => "Search Comment (Ultimate)";
 
-        [PluginService]
-        public IDalamudPluginInterface PluginInterface { get; set; } = null!;
-        [PluginService]
-        public ICommandManager CommandManager { get; set; } = null!;
-        [PluginService]
-        public IPluginLog Log { get; set; } = null!;
-        [PluginService]
-        public ISigScanner SigScanner { get; set; } = null!;
-        [PluginService]
-        public IClientState ClientState { get; set; } = null!;
+        public IDalamudPluginInterface PluginInterface { get; init; }
+        public ICommandManager CommandManager { get; init; }
+        public IPluginLog Log { get; init; }
+        public ISigScanner SigScanner { get; init; }
+        public IObjectTable obj { get; init; }
 
         public PluginConfig PluginConfig;
         private IntPtr _originalInstructionAddress;
@@ -30,12 +25,19 @@ namespace SearchCommentUltimate
         public SearchCommentUI SCUI;
         private bool _isPatchApplied = false;
 
-#pragma warning disable CS8618
-        public Plugin(IDalamudPluginInterface pluginInterface, ICommandManager commandManager)
-#pragma warning restore CS8618
+        public Plugin(
+            IDalamudPluginInterface pluginInterface,
+            ICommandManager commandManager,
+            IPluginLog log,
+            ISigScanner sigScanner,
+            IObjectTable objectTable)
         {
             PluginInterface = pluginInterface;
             CommandManager = commandManager;
+            Log = log;
+            SigScanner = sigScanner;
+            obj = objectTable;
+
             PluginConfig = PluginInterface.GetPluginConfig() as PluginConfig ?? new PluginConfig();
             PluginConfig.Initialize(PluginInterface);
             SCUI = new SearchCommentUI(this);
@@ -44,6 +46,7 @@ namespace SearchCommentUltimate
             {
                 HelpMessage = "Toggles the Search Comment (Ultimate) settings window."
             });
+
             PluginInterface.UiBuilder.Draw += OnDraw;
             PluginInterface.UiBuilder.OpenMainUi += OnToggleUI;
             PluginInterface.UiBuilder.OpenConfigUi += OnToggleUI;
@@ -95,7 +98,7 @@ namespace SearchCommentUltimate
 
         private void OnDraw()
         {
-            if (ClientState is not null && ClientState.LocalPlayer is not null)
+            if (obj.LocalPlayer is not null)
             {
                 SCUI.Draw();
                 if (_isPatchApplied && !PluginConfig.Active)
@@ -130,6 +133,7 @@ namespace SearchCommentUltimate
         public void Dispose()
         {
             RestoreOriginal();
+            CommandManager.RemoveHandler("/scu");
             PluginInterface.UiBuilder.Draw -= OnDraw;
             PluginInterface.UiBuilder.OpenMainUi -= OnToggleUI;
             PluginInterface.UiBuilder.OpenConfigUi -= OnToggleUI;

@@ -1,8 +1,8 @@
-﻿<Project Sdk="Dalamud.NET.Sdk/13.0.0">
+﻿<Project Sdk="Dalamud.NET.Sdk/14.0.1">
 	
   <PropertyGroup>
-	<VersionPrefix>1.0.2</VersionPrefix>
-    <TargetFramework>net9.0-windows</TargetFramework>
+	<VersionPrefix>1.0.3</VersionPrefix>
+    <TargetFramework>net10.0-windows7.0</TargetFramework>
     <RootNamespace>Search_Comment__Ultimate_</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
